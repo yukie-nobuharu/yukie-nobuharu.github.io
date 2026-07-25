@@ -33,7 +33,7 @@ body {
     font-family: "Open Sans", Arial, sans-serif;
     line-height: 1.7;
     animation-name: page-load;
-    animation-duration: 0.8s;
+    animation-duration: 5s;
     animation-fill-mode: both;
 }
 
