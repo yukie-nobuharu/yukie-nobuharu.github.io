@@ -470,6 +470,12 @@ header .container {
     color: #003F6B;
 }
 
+.logo-img {
+    height: 46px;
+    width: auto;
+    display: block;
+}
+
 /* Navigation
    Used by:
    - All Pages
@@ -1328,6 +1334,12 @@ footer {
     .offer-grid,
     .why-join-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 36px;
     }
 }
 
