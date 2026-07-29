@@ -90,17 +90,6 @@ h1 {
     animation-iteration-count: 6;
 }
 
-@keyframes cursor-blink {
-    0%,
-    50% {
-        opacity: 1;
-    }
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
 h2 {
     font-size: 40px;
     margin-bottom: 20px;
@@ -152,8 +141,6 @@ html {
 /* Focus Visibility
    Used by:
    - All interactive elements, all pages
-   A brighter, tech-styled glow for keyboard focus, kept
-   separate from :hover so mouse users don't see it.
 */
 
 a:focus-visible,
@@ -167,9 +154,7 @@ a:focus-visible,
 
 /* Buttons
    Used by:
-   - Home
-   - Activities
-   - Club Officers
+   - All Pages
 */
 
 .btn {
@@ -241,10 +226,6 @@ a:focus-visible,
    - Welcome, Mission and Vision, Why Join (Home)
    - Activities Overview, Annual Events, Club Highlights (Activities)
    - Leadership, Officer Responsibilities (Officers)
-   These sections never pair with .section-alt in the HTML, so their
-   white background is stated explicitly here rather than left to
-   fall back on body's default — keeps the alternating white/tint
-   rhythm intentional instead of accidental.
 */
 
 .welcome,
@@ -277,16 +258,6 @@ a:focus-visible,
    - Why Join, What We Offer (Home)
    - Upcoming Activities (Activities)
    - Club Officers, Officer Responsibilities (Officers)
-   The "// " mark before every <h2> defaults to accent green. Where
-   a section's own cards already carry a specific color — Why Join's
-   benefit-card border, What We Offer's and Upcoming Activities' card
-   borders, the secondary blue used for officer/responsibility labels
-   — the heading picks up that same color instead, so the section
-   reads as one coordinated block rather than a heading in one color
-   and cards in another. Sections without a card color of their own
-   (About, Core Values, Mission and Vision, Activity Gallery,
-   Featured Activities, Annual Events, Club Highlights) keep the
-   default green rather than being assigned one arbitrarily.
 */
 
 .why-join h2::before {
@@ -304,9 +275,7 @@ a:focus-visible,
 
 /* Page Entrance
    Used by:
-   - Home
-   - Activities
-   - Club Officers
+   - All Pages
 */
 
 @keyframes page-load {
@@ -336,9 +305,7 @@ a:focus-visible,
 
 /* Hero Text Entrance
    Used by:
-   - Home
-   - Activities
-   - Club Officers
+   - All Pages
 */
 
 @keyframes fade-slide-up {
@@ -352,11 +319,25 @@ a:focus-visible,
     }
 }
 
+/* Cursor Blink
+   Used by:
+   - Hero Heading (h1), Home, Activities, Club Officers
+*/
+
+@keyframes cursor-blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
 /* Hero Image Entrance
    Used by:
-   - Home
-   - Activities
-   - Club Officers
+   - All Pages
 */
 
 @keyframes fade-slide-left {
@@ -525,9 +506,7 @@ header .container {
 
 /* Hero Section
    Used by:
-   - Home
-   - Activities
-   - Club Officers
+   - All Pages
 */
 
 .hero {
@@ -616,9 +595,6 @@ footer {
    - Featured Activities, Annual Events, Activity Gallery,
      Club Highlights, Upcoming Activities (Activities)
    - Meet Our Officers, Officer Responsibilities (Officers)
-   Every major content block on the site fades in on scroll except
-   these — they had no entrance treatment at all. Brings them in
-   line with About/Activities Overview/Leadership above.
 */
 
 .core-values-content,
@@ -641,10 +617,6 @@ footer {
    - Join the Club (Home)
    - Leadership Through Service (Officers)
    - Activities Overview (Activities)
-   These sit inside an already-centered, already-constrained
-   content column with nothing else beside them; the only thing
-   they need of their own is a narrower measure so multi-paragraph
-   copy doesn't run edge-to-edge of that column.
 */
 
 .welcome-text,
@@ -821,7 +793,10 @@ footer {
     animation-delay: 0.9s;
 }
 
-/* Card Text */
+/* Card Text
+   Used by:
+   - All Card Components
+*/
 
 .card h3 {
     color: #0D47A1;
@@ -832,6 +807,18 @@ footer {
 }
 
 /* Home Page */
+
+/* Welcome Section
+   Used by:
+   - Home
+*/
+
+.welcome-content {
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* About Section
    Used by:
@@ -858,26 +845,9 @@ footer {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Welcome Section
-   Used by:
-   - Home
-*/
-
-.welcome-content {
-    text-align: left;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Mission and Vision Section
    Used by:
    - Home
-   Mission and Vision are two parallel, equally-weighted ideas,
-   so they run side by side instead of stacking. The two <h3>/<p>
-   pairs are placed into columns by source order (no HTML change
-   needed): heading spans both columns, then Mission takes column
-   1 and Vision takes column 2.
 */
 
 .mission-vision-content {
@@ -1050,6 +1020,7 @@ footer {
 
 /* Featured Activities
    Used by:
+   - Home
    - Activities Page
 */
 
@@ -1222,7 +1193,6 @@ footer {
     margin-bottom: 20px;
 }
 
-
 /* Officer Responsibilities
    Used by:
    - Officers Page
@@ -1235,7 +1205,6 @@ footer {
 .responsibility-card h3 {
     color: #005A9C;
 }
-
 
 /* Future Leader Section
    Used by:
@@ -1338,6 +1307,11 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Small Mobile Screens
+   Used by:
+   - All Pages
+*/
 
 @media (max-width: 480px) {
     .logo-img {
